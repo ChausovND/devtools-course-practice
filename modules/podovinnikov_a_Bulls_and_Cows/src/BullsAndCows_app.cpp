@@ -36,7 +36,7 @@ std::string CLPApplication::operator()(int argc, const char** argv) {
   }
   if (std::string(argv[i]) == "--test2" || std::string(argv[i]) == "-t2") {
     BullsCows a(argv[2]);
-    a.SetPlayerNum(argv[2]);
+    a.SetPlayerNum(argv[3]);
     a.CompareStrings(a.GetRiddleNum(), a.GetPlayerNum());
     // ASSERT_EQ(a.GetBulls(), 0);
     // ASSERT_EQ(a.GetCows(), 3);
@@ -46,7 +46,7 @@ std::string CLPApplication::operator()(int argc, const char** argv) {
   }
   if (std::string(argv[i]) == "--test3" || std::string(argv[i]) == "-t3") {
     BullsCows a(argv[2]);
-    a.SetPlayerNum(argv[2]);
+    a.SetPlayerNum(argv[3]);
     a.CompareStrings(a.GetRiddleNum(), a.GetPlayerNum());
     // ASSERT_EQ(a.GetBulls(), 1);
     // ASSERT_EQ(a.GetCows(), 3);
