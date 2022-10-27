@@ -8,30 +8,20 @@ TEST(CHAUSOV_NIKITA_COMPLEXNUMBER, can_create_complex_number) {
   ASSERT_NO_THROW(ComplexNumber z(1.0, 2.0));
 }
 
-TEST(CHAUSOV_NIKITA_COMPLEXNUMBER, getRe_works_correct) {
+TEST(CHAUSOV_NIKITA_COMPLEXNUMBER, getRe_getIm_works_correct) {
   double re = 1.0;
   double im = 2.0;
   ComplexNumber z(re, im);
   EXPECT_DOUBLE_EQ(re, z.getRe());
-}
-
-TEST(CHAUSOV_NIKITA_COMPLEXNUMBER, getIm_works_correct) {
-  double re = 1.0;
-  double im = 2.0;
-  ComplexNumber z(re, im);
   EXPECT_DOUBLE_EQ(im, z.getIm());
 }
 
-TEST(CHAUSOV_NIKITA_COMPLEXNUMBER, setRe_works_correct) {
+TEST(CHAUSOV_NIKITA_COMPLEXNUMBER, setRe_setIm_works_correct) {
   ComplexNumber z;
   double re = 1.0;
+  double im = 1.0;
   z.setRe(re);
   EXPECT_DOUBLE_EQ(re, z.getRe());
-}
-
-TEST(CHAUSOV_NIKITA_COMPLEXNUMBER, setIm_works_correct) {
-  ComplexNumber z;
-  double im = 1.0;
   z.setIm(im);
   EXPECT_DOUBLE_EQ(im, z.getIm());
 }
