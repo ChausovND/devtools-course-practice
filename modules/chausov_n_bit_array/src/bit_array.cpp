@@ -28,6 +28,12 @@ BitArray::BitArray(const BitArray& arrCopy) {
   for (int i = 0; i < static_cast<int>(size); i++) arr[i] = arrCopy.arr[i];
 }
 
+BitArray::~BitArray() {
+  bitSize = 0;
+  size = 0;
+  delete[] arr;
+}
+
 int BitArray::GetSizeBits() { return bitSize; }
 
 void BitArray::SetBit(unsigned int bitPos, bool val) {

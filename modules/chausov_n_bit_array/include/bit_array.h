@@ -15,6 +15,7 @@ class BitArray {
   BitArray();
   explicit BitArray(const unsigned int _bitSize);
   BitArray(const BitArray& arrCopy);
+  ~BitArray();
 
   int GetSizeBits();
   void SetBit(unsigned int bitPos, bool val);
