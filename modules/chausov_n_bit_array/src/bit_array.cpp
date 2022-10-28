@@ -18,14 +18,14 @@ BitArray::BitArray(const unsigned int _bitSize) {
   }
   bitSize = _bitSize;
   arr = new char[size];
-  for (int i = 0; i < static_cast<int>(size); i++) arr[i] = 0;
+  for (unsigned int i = 0; i < size; i++) arr[i] = 0;
 }
 
 BitArray::BitArray(const BitArray& arrCopy) {
   bitSize = arrCopy.bitSize;
   size = arrCopy.size;
   arr = new char[size];
-  for (int i = 0; i < static_cast<int>(size); i++) arr[i] = arrCopy.arr[i];
+  for (unsigned int i = 0; i < size; i++) arr[i] = arrCopy.arr[i];
 }
 
 BitArray::~BitArray() {
@@ -52,7 +52,7 @@ bool BitArray::IsEmpty() { return size == 0 && bitSize == 0 && arr == NULL; }
 
 void BitArray::DeleteArray() {
   if (arr == NULL) throw std::string("Array alrady NULL");
-  for (int i = 0; i < static_cast<int>(size); i++) arr[i] = 0;
+  for (unsigned int i = 0; i < size; i++) arr[i] = 0;
   delete[] arr;
   size = 0;
   bitSize = 0;
