@@ -29,9 +29,10 @@ BitArray::BitArray(const BitArray& arrCopy) {
 }
 
 BitArray::~BitArray() {
-  bitSize = 0;
   size = 0;
+  bitSize = 0;
   delete[] arr;
+  arr = nullptr;
 }
 
 int BitArray::GetSizeBits() { return bitSize; }
@@ -51,12 +52,9 @@ bool BitArray::GetBit(unsigned int bitPos) {
 bool BitArray::IsEmpty() { return size == 0; }
 
 void BitArray::DeleteArray() {
-  if (arr == NULL) throw std::string("Array alrady NULL");
-  for (unsigned int i = 0; i < size; i++) arr[i] = 0;
-  delete[] arr;
-  size = 0;
-  bitSize = 0;
-  arr = NULL;
+  if (arr == nullptr) throw std::string("Array alrady NULL");
+
+  this->~BitArray();
 }
 
 void BitArray::AllocateArray(int _bitSize) {
