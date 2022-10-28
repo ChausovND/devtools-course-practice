@@ -5,7 +5,7 @@
 #include <string>
 
 BitArray::BitArray() {
-  arr = NULL;
+  arr = nullptr;
   size = 0;
   bitSize = 0;
 }
