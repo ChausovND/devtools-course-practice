@@ -21,8 +21,14 @@ TEST(Chausov_BitArray_Test, Set_Get) {
   EXPECT_EQ(1, arr.GetBit(0));
 }
 
+TEST(Chausov_BitArray_Test, Set_Get_Max) {
+  BitArray arr(8);
+  arr.SetBit(7, 1);
+  EXPECT_EQ(1, arr.GetBit(7));
+}
+
 TEST(Chausov_BitArray_Test, Set_Get_OutOfRange) {
-  BitArray arr(2);
+  BitArray arr(8);
   ASSERT_ANY_THROW(arr.SetBit(8, 1));
   ASSERT_ANY_THROW(arr.GetBit(8));
 }

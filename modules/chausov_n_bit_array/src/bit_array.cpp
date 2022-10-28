@@ -11,7 +11,11 @@ BitArray::BitArray() {
 }
 
 BitArray::BitArray(const unsigned int _bitSize) {
-  size = _bitSize / 8 + 1;
+  if (_bitSize % 8) {
+    size = _bitSize / 8 + 1;
+  } else {
+    size = _bitSize / 8;
+  }
   bitSize = _bitSize;
   arr = new char[size];
   for (int i = 0; i < static_cast<int>(size); i++) arr[i] = 0;
