@@ -48,7 +48,7 @@ bool BitArray::GetBit(unsigned int bitPos) {
   return arr[pos] & 1 << (7 - bitPos % 8);
 }
 
-bool BitArray::IsEmpty() { return size == 0 && bitSize == 0 && arr == NULL; }
+bool BitArray::IsEmpty() { return size == 0; }
 
 void BitArray::DeleteArray() {
   if (arr == NULL) throw std::string("Array alrady NULL");
